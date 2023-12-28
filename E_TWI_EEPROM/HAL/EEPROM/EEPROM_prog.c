@@ -107,7 +107,7 @@ void EEPROM_voidERASEALLDATA(u8 u8Pass)
 	if (u8Pass == ERASEPASS)
 	{
 		u8 erase_i =0;
-		for (erase_i=0 ;erase_i<8;erase_i++)
+		for (erase_i=0 ;erase_i<=MaxBlockNo;erase_i++)
 		{
 			EEPROM_voidERASEBLOCK(erase_i);
 
