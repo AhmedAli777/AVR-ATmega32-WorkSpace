@@ -31,13 +31,13 @@ int main(void)
 	LCD_voidInit();
 	TWI_voidMasterInit();
 
-	EEPROM_voidWriteString(0x00,array);
-	EEPROM_voidWrite(0x10,5);
+	EEPROM_voidWriteString(1,0x00,array);
+	EEPROM_voidWrite(3,0x10,0x5);
 
 
 
-	EEPROM_voidReadString(0x00,arrayR);
-	EEPROM_voidRead(0x10,ptrx);
+	EEPROM_voidReadString(1,0x00,arrayR);
+	EEPROM_voidRead(3,0x10,ptrx);
 
 	LCD_voidGoTo(1,1);
 	LCD_voidWriteString("EEPROM Read:");
@@ -47,9 +47,11 @@ int main(void)
 	LCD_voidGoTo(8,2);
 	LCD_voidWriteNum(x);
 
+	EEPROM_voidERASEALLDATA(0X22);
+
+
 	while(1)
 	{
-
 	}
 
 }
