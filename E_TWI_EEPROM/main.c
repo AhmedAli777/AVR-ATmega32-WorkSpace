@@ -47,7 +47,7 @@ int main(void)
 	LCD_voidGoTo(8,2);
 	LCD_voidWriteNum(x);
 
-	EEPROM_voidERASEALLDATA(0X22);
+
 
 
 	while(1)
