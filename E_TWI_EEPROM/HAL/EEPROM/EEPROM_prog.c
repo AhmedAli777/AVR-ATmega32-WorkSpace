@@ -85,35 +85,4 @@ void EEPROM_voidWriteString(u8 u8BlockNo,u8 Address,u8 *ptr)
 	}
 }
 
-void EEPROM_voidERASEBLOCK(u8 u8BlockNo)
-{
-	if (u8BlockNo < MaxBlockNo )
-	{
-		TWI_voidMasterStart();
-		TWI_voidMasterWriteAddressW(EEPROM_Adress|u8BlockNo);
-		TWI_voidMasterWriteData(0X00);
-		for (u8 i = 0; i<MaxWordAddress; i++)
-		{
-			TWI_voidMasterWriteData(0XFF);
-		}
-		TWI_voidMasterStop();
-		_delay_ms(10);
-	}
-}
 
-void EEPROM_voidERASEALLDATA(u8 u8Pass)
-{
-
-	if (u8Pass == ERASEPASS)
-	{
-		u8 erase_i =0;
-		for (erase_i=0 ;erase_i<=MaxBlockNo;erase_i++)
-		{
-			EEPROM_voidERASEBLOCK(erase_i);
-
-		}
-
-	}
-
-
-}
