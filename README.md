@@ -1,1 +1,1 @@
-full avr projects for avr atmega32, including: DIO , 7 SEGMENT , Key Pad , LCD , Stepper Motor , GI , EXTI , ADC , TIMER0 , TIMER1, TIMER2, Servo Motor , ICU , WDT , UART , SPI , TWI (I2C) , EEPROM , CALCULATOR 
+Full AVR atmega32 projects, including: DIO , 7 SEGMENT , Key Pad , LCD , Stepper Motor , GI , EXTI , ADC , TIMER0 , TIMER1, TIMER2, Servo Motor , ICU , WDT , UART , SPI , TWI (I2C) , EEPROM , CALCULATOR 
