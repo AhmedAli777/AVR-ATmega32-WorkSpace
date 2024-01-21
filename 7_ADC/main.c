@@ -15,25 +15,26 @@ int main()
 
 	LCD_voidInit();
 	ADC_voidADCInit();
-	u32  millivolt,degree;
+	s32  millivolt1,millivolt2,degree;
 
 	//loop
 	while(1)
 	{
 
 
-		millivolt=ADC_u16ReadChannel(CH_0)*4.88;
+		millivolt1=ADC_u16ReadChannel(CH_0)*4.88;
+		millivolt2=ADC_u16ReadChannel(CH_1)*4.88;
 
 
 		//x1=((u16)(ADC_u16ReadChannel(CH_0) *(u32) 5000))/(s32)(1024);
-		degree = millivolt/10;
+		degree = (millivolt1-millivolt2)/10;
 
 		LCD_voidGoTo(1,1);
 		LCD_voidWriteString("Temp:");
 		LCD_voidGoTo(1,2);
 
 		LCD_voidWriteNum(degree);
-		LCD_voidWriteString("   "); //for clearing extra numbers when counting down
+		LCD_voidWriteString("          "); //for clearing extra numbers when counting down
 
 	}
 	return 0;
